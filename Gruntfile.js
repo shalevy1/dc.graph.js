@@ -403,6 +403,7 @@ module.exports.jsFiles = [
     'src/dagre_layout.js',
     'src/tree_layout.js',
     'src/graphviz_layout.js',
+    'src/dynagraph_layout.js',
     'src/d3_force_layout.js',
     'src/d3v4_force_layout.js',
     'src/flexbox_layout.js',
