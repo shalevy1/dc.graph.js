@@ -111,7 +111,7 @@ module.exports = function (grunt) {
         },
         watch: {
             scripts: {
-                files: ['<%= conf.src %>/**/*.js', '*.js', 'dc.graph.css'],
+                files: ['<%= conf.src %>/**/*.js', '*.js', 'dc.graph.css', '<%= conf.web %>/js/*.js', '!<%= conf.web %>/js/dc.graph*.js', '!<%= conf.web %>/js/d3*.js', '!<%= conf.web %>/js/crossfilter.js', '!<%= conf.web %>/js/dc.js', '!<%= conf.web %>/js/cola.js', '!<%= conf.web %>/js/dagre.js', '!<%= conf.web %>/js/viz.js', '!<%= conf.web %>/js/jquery*.js', '!<%= conf.web %>/js/lodash.js', '!<%= conf.web %>/js/bootstrap.js', '!<%= conf.web %>/js/metagraph.js', '!<%= conf.web %>/js/queue.js', '!<%= conf.web %>/js/graphlib-dot*.js', '!<%= conf.web %>/js/*-layout.js', '!<%= conf.web %>/js/lysenko-interval-tree.js', '!<%= conf.web %>/js/chart.registry.js', '!<%= conf.web %>/js/timeline.js', '!<%= conf.web %>/js/querystring.js', '!<%= conf.web %>/js/sync-url-options.js', '!<%= conf.web %>/js/promise-polyfill.js', '!<%= conf.web %>/js/classlist-polyfill.js'],
                 tasks: ['build', 'copy'],
                 options: {
                     livereload: true
