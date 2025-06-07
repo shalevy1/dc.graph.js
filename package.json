@@ -24,7 +24,7 @@
     "url": "https://github.com/dc-js/dc.graph.js.git"
   },
   "dependencies": {
-    "crossfilter2": "^1.4.8",
+    "crossfilter2": "~1.4.8",
     "css-layout": "1.x",
     "d3": "3.x",
     "dagre": "^0.8.5",
@@ -49,7 +49,7 @@
     "grunt-contrib-concat": "~1.0",
     "grunt-contrib-connect": "~1.0",
     "grunt-contrib-copy": "~1.0",
-    "grunt-contrib-uglify": "^3.4.0",
+    "grunt-contrib-uglify": "^5.2.2",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-gh-pages": "^4.0.0",
     "grunt-jsdoc": "^2.4.1",
