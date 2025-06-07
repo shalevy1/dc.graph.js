@@ -2,11 +2,12 @@ import commonjs from '@rollup/plugin-commonjs';
 import nodeResolve from '@rollup/plugin-node-resolve';
 
 export default {
-    input: "node_modules/yoga-layout/dist/src/index.js",
+    input: "yoga-wrapper-entry.js",
     output: {
-        name: "yogaLayout",
+        name: "yogaWrapper",
         file: "yoga-layout.js",
-        format: "es"
+        format: "es",
+        inlineDynamicImports: true
     },
     plugins: [
         nodeResolve({

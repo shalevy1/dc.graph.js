@@ -13,6 +13,10 @@ dc.graph.js is a JavaScript library for dynamic, interactive graph visualization
 - Web worker support for computationally intensive layouts (files ending in `.worker.js`)
 - Plugin-based interaction system with modes for selection, editing, highlighting, etc.
 
+## Commit Message Guidelines
+
+- Prefix all commit messages with "claude: "
+
 ## Build System
 
 The project uses Grunt for building. Key commands:

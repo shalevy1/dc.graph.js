@@ -130,6 +130,12 @@ module.exports = function (grunt) {
                 options: {
                     livereload: true
                 }
+            },
+            html: {
+                files: ['<%= conf.web %>/**/*.html'],
+                options: {
+                    livereload: true
+                }
             }
         },
         connect: {
@@ -333,7 +339,7 @@ module.exports = function (grunt) {
     grunt.registerTask('build', ['concat']);
     grunt.registerTask('docs', ['build', 'copy', 'jsdoc', 'jsdoc2md']);
     grunt.registerTask('web', ['docs', 'gh-pages']);
-    grunt.registerTask('server', ['build', 'copy', 'connect:server', 'watch:scripts']);
+    grunt.registerTask('server', ['build', 'copy', 'connect:server', 'watch']);
     grunt.registerTask('server:docs', ['docs', 'connect:server', 'watch:docs']);
     grunt.registerTask('lint', ['build', 'jshint', 'jscs']);
     grunt.registerTask('default', ['build', 'shell:hooks']);
