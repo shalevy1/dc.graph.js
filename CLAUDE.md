@@ -94,3 +94,7 @@ Layout computation can be offloaded to web workers for performance. Worker files
 - Various layout libraries: webcola, dagre, viz.js
 
 **Note:** Project is based on older D3 v3 and is not actively maintained but still functional.
+
+## Development Notes
+
+- Use gtimeout because we're on a mac
