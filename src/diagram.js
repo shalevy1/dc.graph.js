@@ -1591,10 +1591,14 @@ dc_graph.diagram = function (parent, chartGroup) {
 
         // ordering shouldn't matter, but we support ordering in case it does
         if(_diagram.nodeOrdering()) {
-            nodes = crossfilter.quicksort.by(_diagram.nodeOrdering())(nodes.slice(0), 0, nodes.length);
+            nodes = nodes.slice(0).sort(function(a, b) {
+                return d3.ascending(_diagram.nodeOrdering()(a), _diagram.nodeOrdering()(b));
+            });
         }
         if(_diagram.edgeOrdering()) {
-            edges = crossfilter.quicksort.by(_diagram.edgeOrdering())(edges.slice(0), 0, edges.length);
+            edges = edges.slice(0).sort(function(a, b) {
+                return d3.ascending(_diagram.edgeOrdering()(a), _diagram.edgeOrdering()(b));
+            });
         }
 
         var wnodes = regenerate_objects(_nodes, nodes, null, function(v) {
@@ -1895,8 +1899,10 @@ dc_graph.diagram = function (parent, chartGroup) {
         ordered_constraints.forEach(function(c) {
             var sorted = c.nodes.map(function(n) { return _nodes[n]; });
             if(c.ordering) {
-                var sort = crossfilter.quicksort.by(param(c.ordering));
-                sorted = sort(sorted, 0, sorted.length);
+                var orderingFn = param(c.ordering);
+                sorted = sorted.sort(function(a, b) {
+                    return d3.ascending(orderingFn(a), orderingFn(b));
+                });
             }
             var left;
             sorted.forEach(function(n, i) {

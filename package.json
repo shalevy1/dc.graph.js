@@ -28,7 +28,7 @@
     "css-layout": "1.x",
     "d3": "3.x",
     "dagre": "^0.8.5",
-    "dc": "~2.1.0",
+    "dc": "~2.2.2",
     "ink-docstrap": "^1.3.2",
     "metagraph": "^0.0.7",
     "queue-async": "~1.x",
