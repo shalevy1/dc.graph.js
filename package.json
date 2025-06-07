@@ -34,7 +34,7 @@
     "queue-async": "~1.x",
     "viz.js": "^1.8.2",
     "webcola": "^3.4.0",
-    "yoga-layout": "^1.9"
+    "yoga-layout": "^3.2.1"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.14.0",

@@ -1,12 +1,12 @@
-import commonjs from 'rollup-plugin-commonjs';
-import nodeResolve from 'rollup-plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import nodeResolve from '@rollup/plugin-node-resolve';
 
 export default {
-    input: "node_modules/yoga-layout/dist/entry-browser.js",
+    input: "node_modules/yoga-layout/dist/src/index.js",
     output: {
         name: "yogaLayout",
         file: "yoga-layout.js",
-        format: "umd"
+        format: "es"
     },
     plugins: [
         nodeResolve({

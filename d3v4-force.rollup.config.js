@@ -1,4 +1,4 @@
-import node from "rollup-plugin-node-resolve";
+import node from "@rollup/plugin-node-resolve";
 
 export default {
   input: "d3v4-force.index.js",

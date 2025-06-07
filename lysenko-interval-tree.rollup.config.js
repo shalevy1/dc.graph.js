@@ -1,5 +1,5 @@
-import commonjs from 'rollup-plugin-commonjs';
-import nodeResolve from 'rollup-plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import nodeResolve from '@rollup/plugin-node-resolve';
 
 export default {
     input: "node_modules/interval-tree-1d/interval-tree.js",
