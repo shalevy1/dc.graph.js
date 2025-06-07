@@ -201,9 +201,13 @@ module.exports = function (grunt) {
                         flatten: true,
                         nonull: true,
                         src: [
-                            'node_modules/ionicons/dist/ionicons/svg/md-*'
+                            'node_modules/ionicons/dist/svg/*.svg'
                         ],
-                        dest: '<%= conf.web %>/img/ionicons'
+                        dest: '<%= conf.web %>/img/ionicons/',
+                        rename: function(dest, src) {
+                            // Map new ionicons names to old md- prefixed names
+                            return dest + 'md-' + src;
+                        }
                     },
                     {
                         nonull: true,
