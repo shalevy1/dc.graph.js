@@ -486,7 +486,6 @@ dc_graph.expand_collapse = function(options) {
         const mm = Object.fromEntries(
             Array.prototype.concat.apply([], Object.keys(_expanded).map(dir => Array.from(_expanded[dir])))
                 .map(nk => [nk, true]));
-        console.log('mm', mm);
         expanded_highlight_group.highlight(
             mm,
             {});
