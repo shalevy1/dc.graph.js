@@ -112,7 +112,10 @@ module.exports = function (grunt) {
         watch: {
             scripts: {
                 files: ['<%= conf.src %>/**/*.js', '*.js', 'dc.graph.css'],
-                tasks: ['build', 'copy']
+                tasks: ['build', 'copy'],
+                options: {
+                    livereload: true
+                }
             },
             docs: {
                 files: ['welcome.md', '<%= conf.src %>/**/*.js', 'dc.graph.css'],
