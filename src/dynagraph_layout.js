@@ -82,12 +82,10 @@ dc_graph.dynagraph_layout = function(id, layout) {
     function incr2dg_edge_attrs(e) {
         const attrs = {};
         if(e.pos)
-            attrs.cola = {
-                points: e.pos.split(' ')
-                    .map(coord => coord.split(',').map(Number))
-                    .map(incr2dg_coord)
-                    .map(([x,y]) => ({x,y}))
-            };
+            attrs.points = e.pos.split(' ')
+                .map(coord => coord.split(',').map(Number))
+                .map(incr2dg_coord)
+                .map(([x,y]) => ({x,y}));
         return attrs;
     }
 
@@ -244,9 +242,7 @@ dc_graph.dynagraph_layout = function(id, layout) {
         function dispatchState(event) {
             _dispatch[event](
                 wnodes,
-                wedges.map(function(e) {
-                    return {dcg_edgeKey: e.dcg_edgeKey};
-                })
+                wedges
             );
         }
         _tick = function() {
