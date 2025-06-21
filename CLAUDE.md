@@ -103,3 +103,5 @@ Layout computation can be offloaded to web workers for performance. Worker files
 ## Claude Memories
 
 - please remove trailing whitespace from your edits
+- not necessary to build, we have a server with live reload running
+- be terse and avoid purple prose in commit messages
