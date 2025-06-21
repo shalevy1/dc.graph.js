@@ -172,6 +172,10 @@ dc_graph.dynagraph_layout = function(id, layout) {
             return;
         for(const cmd of cmds) {
             const {action, kind, graph} = cmd;
+            if(action === 'message') {
+                console.warn('dynagraph message', cmd.message);
+                continue;
+            }
             if(graph !== _Gname) {
                 console.warn('graph name mismatch', _Gname, graph);
                 continue;
