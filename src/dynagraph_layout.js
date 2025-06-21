@@ -189,7 +189,6 @@ dc_graph.dynagraph_layout = function(id, layout) {
                     if(--_lock <= 0) {
                         runCommands(_incrIn);
                         _incrIn = []
-                        _done();
                     }
                     break;
                 default:
@@ -199,6 +198,7 @@ dc_graph.dynagraph_layout = function(id, layout) {
                         runCommands([cmd]);
             }
         }
+        _done();
     }
 
     function init(options) {
