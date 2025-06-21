@@ -84,9 +84,9 @@ dc_graph.dynagraph_layout = function(id, layout) {
         if(e.pos)
             attrs.cola = {
                 points: e.pos.split(' ')
-                .map(coord => coord.split(',').map(Number))
-                .map(incr2dg_coord)
-                .map(([x,y]) => ({x,y}))
+                    .map(coord => coord.split(',').map(Number))
+                    .map(incr2dg_coord)
+                    .map(([x,y]) => ({x,y}))
             };
         return attrs;
     }
