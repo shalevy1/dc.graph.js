@@ -40,6 +40,13 @@ module.exports = function (grunt) {
             'src/graphviz_attrs.js',
             'src/d3_force_layout.js',
             'src/webworker_message.js'
+        ],
+        dynagraphWorkerFiles: [
+            'src/core.js',
+            'src/generate_objects.js',
+            'src/graphviz_attrs.js',
+            'src/dynagraph_layout.js',
+            'src/webworker_message.js'
         ]
     };
 
@@ -71,6 +78,10 @@ module.exports = function (grunt) {
             d3ForceWorker: {
                 src: '<%= conf.d3ForceWorkerFiles %>',
                 dest: '<%= conf.pkg.name %>.d3-force.worker.js'
+            },
+            dynagraphWorker: {
+                src: '<%= conf.dynagraphWorkerFiles %>',
+                dest: '<%= conf.pkg.name %>.dynagraph.worker.js'
             }
         },
         uglify: {
@@ -260,10 +271,13 @@ module.exports = function (grunt) {
                             '<%= conf.pkg.name %>.d3v4-force.worker.js.map',
                             '<%= conf.pkg.name %>.d3-force.worker.js',
                             '<%= conf.pkg.name %>.d3-force.worker.js.map',
+                            '<%= conf.pkg.name %>.dynagraph.worker.js',
+                            '<%= conf.pkg.name %>.dynagraph.worker.js.map',
                             'd3.flexdivs.js',
                             'dc.graph.tracker.domain.js',
                             'd3v4-force.js',
                             'lysenko-interval-tree.js',
+                            'incrface-umd.js',
                             'yoga-layout.js',
                             'querystring.js',
                             'sync-url-options.js',

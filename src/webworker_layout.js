@@ -1,9 +1,9 @@
 var _workers = {};
 var NUMBER_RESULTS = 3;
-function create_worker(layoutAlgorithm) {
-    if(!_workers[layoutAlgorithm]) {
-        var worker = _workers[layoutAlgorithm] = {
-            worker: new Worker(script_path() + 'dc.graph.' + layoutAlgorithm + '.worker.js'),
+function create_worker(workerName) {
+    if(!_workers[workerName]) {
+        var worker = _workers[workerName] = {
+            worker: new Worker(script_path() + 'dc.graph.' + workerName + '.worker.js'),
             layouts: {}
         };
         worker.worker.onmessage = function(e) {
@@ -15,13 +15,16 @@ function create_worker(layoutAlgorithm) {
                 engine.processExtraWorkerResults.apply(engine, e.data.args.slice(NUMBER_RESULTS));
             worker.layouts[layoutId].dispatch()[e.data.response].apply(null, e.data.args);
         };
+        worker.worker.onerror = function(e) {
+            console.error('Worker error:', e);
+        };
     }
-    return _workers[layoutAlgorithm];
+    return _workers[workerName];
 }
 
-dc_graph.webworker_layout = function(layoutEngine) {
+dc_graph.webworker_layout = function(layoutEngine, workerName) {
     var _tick, _done, _dispatch = d3.dispatch('init', 'start', 'tick', 'end');
-    var _worker = create_worker(layoutEngine.layoutAlgorithm());
+    var _worker = create_worker(workerName || layoutEngine.layoutAlgorithm());
     var engine = {};
     _worker.layouts[layoutEngine.layoutId()] = engine;
 

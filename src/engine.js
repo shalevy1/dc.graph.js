@@ -50,6 +50,7 @@ dc_graph._engines = [
     },
     {
         names: ['dynadag'],
+        workerName: 'dynagraph',
         instantiate: function(layout, args) {
             return dc_graph.dynagraph_layout(null, layout, args.server);
         }
@@ -99,7 +100,7 @@ dc_graph.engines = {
                 engine[p](args[p]);
         });
         if(engine.supportsWebworker && engine.supportsWebworker() && worker)
-            engine = dc_graph.webworker_layout(engine);
+            engine = dc_graph.webworker_layout(engine, entry.workerName);
         return engine;
     },
     available: function() {
